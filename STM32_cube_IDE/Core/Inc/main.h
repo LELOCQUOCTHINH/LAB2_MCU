@@ -55,16 +55,22 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void set_time(int time);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define DOT_Pin GPIO_PIN_4
+#define DOT_GPIO_Port GPIOA
 #define LED_RED_Pin GPIO_PIN_5
 #define LED_RED_GPIO_Port GPIOA
-#define ANOT_COMMON_2_Pin GPIO_PIN_10
-#define ANOT_COMMON_2_GPIO_Port GPIOB
-#define ANOT_COMMON_1_Pin GPIO_PIN_15
+#define ANOT_COMMON_1_Pin GPIO_PIN_10
 #define ANOT_COMMON_1_GPIO_Port GPIOB
+#define ANOT_COMMON_2_Pin GPIO_PIN_11
+#define ANOT_COMMON_2_GPIO_Port GPIOB
+#define ANOT_COMMON_3_Pin GPIO_PIN_12
+#define ANOT_COMMON_3_GPIO_Port GPIOB
+#define ANOT_COMMON_4_Pin GPIO_PIN_13
+#define ANOT_COMMON_4_GPIO_Port GPIOB
 #define A_7_SEG_Pin GPIO_PIN_8
 #define A_7_SEG_GPIO_Port GPIOA
 #define B_7_SEG_Pin GPIO_PIN_9

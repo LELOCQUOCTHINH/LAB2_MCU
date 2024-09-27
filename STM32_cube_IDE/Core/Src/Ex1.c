@@ -1,10 +1,6 @@
 #include "Ex1.h"
-#include "Display7Seg.h"
+
 bool state = 0;
-void set_time(int time)
-{
-	counter = time/Tick;
-}
 
 void Ex1_set()
 {
@@ -34,8 +30,8 @@ void Ex1_run()
 	  	  }
 }
 
-void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
-{
-	counter--;
-}
+//void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
+//{
+//	counter--;
+//}
 

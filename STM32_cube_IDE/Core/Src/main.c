@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Ex1.h"
+#include "Ex2.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,14 +87,14 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(& htim2);
-  Ex1_set();
+  Ex2_set();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  Ex1_run();
+	  Ex2_run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -196,23 +196,26 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|A_7_SEG_Pin|B_7_SEG_Pin|C_7_SEG_Pin
-                          |D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin|G_7_SEG_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, DOT_Pin|LED_RED_Pin|A_7_SEG_Pin|B_7_SEG_Pin
+                          |C_7_SEG_Pin|D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin
+                          |G_7_SEG_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, ANOT_COMMON_2_Pin|ANOT_COMMON_1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOB, ANOT_COMMON_1_Pin|ANOT_COMMON_2_Pin|ANOT_COMMON_3_Pin|ANOT_COMMON_4_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pins : LED_RED_Pin A_7_SEG_Pin B_7_SEG_Pin C_7_SEG_Pin
-                           D_7_SEG_Pin E_7_SEG_Pin F_7_SEG_Pin G_7_SEG_Pin */
-  GPIO_InitStruct.Pin = LED_RED_Pin|A_7_SEG_Pin|B_7_SEG_Pin|C_7_SEG_Pin
-                          |D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin|G_7_SEG_Pin;
+  /*Configure GPIO pins : DOT_Pin LED_RED_Pin A_7_SEG_Pin B_7_SEG_Pin
+                           C_7_SEG_Pin D_7_SEG_Pin E_7_SEG_Pin F_7_SEG_Pin
+                           G_7_SEG_Pin */
+  GPIO_InitStruct.Pin = DOT_Pin|LED_RED_Pin|A_7_SEG_Pin|B_7_SEG_Pin
+                          |C_7_SEG_Pin|D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin
+                          |G_7_SEG_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : ANOT_COMMON_2_Pin ANOT_COMMON_1_Pin */
-  GPIO_InitStruct.Pin = ANOT_COMMON_2_Pin|ANOT_COMMON_1_Pin;
+  /*Configure GPIO pins : ANOT_COMMON_1_Pin ANOT_COMMON_2_Pin ANOT_COMMON_3_Pin ANOT_COMMON_4_Pin */
+  GPIO_InitStruct.Pin = ANOT_COMMON_1_Pin|ANOT_COMMON_2_Pin|ANOT_COMMON_3_Pin|ANOT_COMMON_4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -221,6 +224,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void set_time(int time)
+{
+	counter = time/Tick;
+}
 /* USER CODE END 4 */
 
 /**
