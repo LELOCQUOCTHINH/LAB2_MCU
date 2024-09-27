@@ -1,3 +1,2 @@
 Ex2.c:7:6:Ex2_set	8	static
 Ex2.c:13:6:Ex2_run	8	static
-Ex2.c:66:6:HAL_TIM_PeriodElapsedCallback	16	static

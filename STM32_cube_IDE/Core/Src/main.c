@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Ex2.h"
+#include "Ex3.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,14 +87,14 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(& htim2);
-  Ex2_set();
+	Ex3_set();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  Ex2_run();
+	  Ex3_run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
