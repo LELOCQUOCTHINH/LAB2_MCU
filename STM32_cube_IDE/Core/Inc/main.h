@@ -76,6 +76,8 @@ void Error_Handler(void);
 #define LED_GREEN_3_GPIO_Port GPIOB
 #define ANOT_COMMON_2_Pin GPIO_PIN_10
 #define ANOT_COMMON_2_GPIO_Port GPIOB
+#define ANOT_COMMON_1_Pin GPIO_PIN_15
+#define ANOT_COMMON_1_GPIO_Port GPIOB
 #define A_7_SEG_Pin GPIO_PIN_8
 #define A_7_SEG_GPIO_Port GPIOA
 #define B_7_SEG_Pin GPIO_PIN_9
