@@ -1,4 +1,51 @@
 #include "Display7Seg.h"
+
+void update7SEG ( int index )
+{
+	if(index >= MAX_LED)
+	{
+		index = 0;
+	}
+
+	 switch ( index )
+	 {
+		 case 0:
+		 // Display the first 7 SEG with led_buffer [0]
+				HAL_GPIO_WritePin(ANOT_COMMON_1_GPIO_Port, ANOT_COMMON_1_Pin, 0);
+				HAL_GPIO_WritePin(ANOT_COMMON_2_GPIO_Port, ANOT_COMMON_2_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_3_GPIO_Port, ANOT_COMMON_3_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_4_GPIO_Port, ANOT_COMMON_4_Pin, 1);
+				display7SEG(led_buffer [0]);
+			 break ;
+		 case 1:
+		 // Display the second 7 SEG with led_buffer [1]
+				HAL_GPIO_WritePin(ANOT_COMMON_1_GPIO_Port, ANOT_COMMON_1_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_2_GPIO_Port, ANOT_COMMON_2_Pin, 0);
+				HAL_GPIO_WritePin(ANOT_COMMON_3_GPIO_Port, ANOT_COMMON_3_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_4_GPIO_Port, ANOT_COMMON_4_Pin, 1);
+				display7SEG(led_buffer [1]);
+			 break ;
+		 case 2:
+		 // Display the third 7 SEG with led_buffer [2]
+				HAL_GPIO_WritePin(ANOT_COMMON_1_GPIO_Port, ANOT_COMMON_1_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_2_GPIO_Port, ANOT_COMMON_2_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_3_GPIO_Port, ANOT_COMMON_3_Pin, 0);
+				HAL_GPIO_WritePin(ANOT_COMMON_4_GPIO_Port, ANOT_COMMON_4_Pin, 1);
+				display7SEG(led_buffer [2]);
+			 break ;
+		 case 3:
+		 // Display the forth 7 SEG with led_buffer [3]
+				HAL_GPIO_WritePin(ANOT_COMMON_1_GPIO_Port, ANOT_COMMON_1_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_2_GPIO_Port, ANOT_COMMON_2_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_3_GPIO_Port, ANOT_COMMON_3_Pin, 1);
+				HAL_GPIO_WritePin(ANOT_COMMON_4_GPIO_Port, ANOT_COMMON_4_Pin, 0);
+				display7SEG(led_buffer [3]);
+			 break ;
+		 default :
+			 break ;
+	 }
+}
+
 void display7SEG ( int counter)
 {
 	switch(counter)

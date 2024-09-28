@@ -1,4 +1,4 @@
 Ex3.c:8:7:Ex3_set	8	static
 Ex3.c:13:6:Ex3_run	4	static
 Ex3.c:21:6:HAL_TIM_PeriodElapsedCallback	16	static
-Ex3.c:38:6:update7SEG	16	static
+Ex3.c:40:6:update7SEG	16	static

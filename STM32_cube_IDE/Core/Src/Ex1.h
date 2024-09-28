@@ -6,5 +6,6 @@
 
 void Ex1_set();
 void Ex1_run();
+void Ex1_time();
 
 #endif

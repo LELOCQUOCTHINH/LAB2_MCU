@@ -30,8 +30,8 @@ void Ex1_run()
 	  	  }
 }
 
-//void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
-//{
-//	counter--;
-//}
+void Ex1_time()
+{
+	counter--;
+}
 

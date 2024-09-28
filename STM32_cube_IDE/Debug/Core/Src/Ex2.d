@@ -23,7 +23,7 @@ Core/Src/Ex2.o: ../Core/Src/Ex2.c ../Core/Src/Ex2.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Src/Display7Seg.h
+ ../Core/Src/Display7Seg.h ../Core/Src/Ex3&4.h
 
 ../Core/Src/Ex2.h:
 
@@ -78,3 +78,5 @@ Core/Src/Ex2.o: ../Core/Src/Ex2.c ../Core/Src/Ex2.h ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
 ../Core/Src/Display7Seg.h:
+
+../Core/Src/Ex3&4.h:

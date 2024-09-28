@@ -1,7 +1,7 @@
 #include "Ex2.h"
 
 int flag = 1; //1, 2 ,3 ,4 is 7seg_1, 2, 3, 4 resistively
-bool indicator_50 = 0; //indicate whereas timer in interval 50ms
+//bool indicator_50 = 0; //indicate whereas timer in interval 50ms
 const int max_flag = 4; //maximum led 7 seg
 
 void Ex2_set()
@@ -44,11 +44,14 @@ void Ex2_run()
 			break;
 	}
 
+}
 
-	 if(counter < 51 && !indicator_50)
+void Ex2_time()
+{
+	 if(counter == 50)
 	 {
 		 flag++;
-		 indicator_50 = 1;
+//		 indicator_50 = 1;
 	 }
 
 	 if(flag > max_flag)
@@ -56,15 +59,12 @@ void Ex2_run()
 		 flag = 1;
 	 }
 
+	counter--;
+
 	 if(counter < 1)
 	 {
 		 HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		 set_time(1000);
-		  indicator_50 = 0;
+//		  indicator_50 = 0;
 	 }
 }
-
-//void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
-//{
-//	counter--;
-//}

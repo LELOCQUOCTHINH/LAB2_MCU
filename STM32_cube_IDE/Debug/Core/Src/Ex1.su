@@ -1,2 +1,3 @@
 Ex1.c:5:6:Ex1_set	8	static
 Ex1.c:11:6:Ex1_run	8	static
+Ex1.c:33:6:Ex1_time	4	static
