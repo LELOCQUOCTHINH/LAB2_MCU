@@ -7,6 +7,7 @@
 #define LOW 0
 
 void updateLEDMatrix(int index);
+void swap_index(uint8_t *arr, int index_1, int index_2); //swap data at index1 and index2
 void clearLEDMatrix();
 void Ex9_set();
 void Ex9_run();

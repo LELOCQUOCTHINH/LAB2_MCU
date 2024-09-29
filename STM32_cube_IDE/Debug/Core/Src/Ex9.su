@@ -1,5 +1,5 @@
 Ex9.c:10:6:Ex9_set	8	static
 Ex9.c:15:6:Ex9_run	4	static
-Ex9.c:30:6:Ex9_time	8	static
-Ex9.c:53:6:updateLEDMatrix	16	static
-Ex9.c:102:6:clearLEDMatrix	8	static
+Ex9.c:30:6:Ex9_time	16	static
+Ex9.c:61:6:updateLEDMatrix	16	static
+Ex9.c:111:6:clearLEDMatrix	8	static

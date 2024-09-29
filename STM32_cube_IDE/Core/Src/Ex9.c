@@ -34,6 +34,14 @@ void Ex9_time()
 	if(index_led_matrix > 7)
 	{
 		index_led_matrix = 0;
+		uint8_t temp = matrix_buffer[0];
+
+		for(int i = 0 ; i < 7 ; i++)
+		{
+			matrix_buffer[i] = matrix_buffer[i+1];
+		}
+
+		matrix_buffer [7] = temp;
 	}
 
 	updateLEDMatrix(index_led_matrix);
@@ -62,42 +70,43 @@ void updateLEDMatrix(int index)
         case 1:
         	clearLEDMatrix();
         	HAL_GPIO_WritePin(GPIOB, matrix_buffer[1], LOW);
-			HAL_GPIO_WritePin(ENM1_GPIO_Port, matrix_Col[1], LOW);
+			HAL_GPIO_WritePin(GPIOA, matrix_Col[1], LOW);
             break;
         case 2:
         	clearLEDMatrix();
         	HAL_GPIO_WritePin(GPIOB, matrix_buffer[2], LOW);
-			HAL_GPIO_WritePin(ENM2_GPIO_Port, matrix_Col[2], LOW);
+			HAL_GPIO_WritePin(GPIOA, matrix_Col[2], LOW);
             break;
         case 3:
         	clearLEDMatrix();
         	HAL_GPIO_WritePin(GPIOB, matrix_buffer[3], LOW);
-			HAL_GPIO_WritePin(ENM3_GPIO_Port, matrix_Col[3], LOW);
+			HAL_GPIO_WritePin(GPIOA, matrix_Col[3], LOW);
             break;
         case 4:
         	clearLEDMatrix();
         	HAL_GPIO_WritePin(GPIOB, matrix_buffer[4], LOW);
-			HAL_GPIO_WritePin(ENM4_GPIO_Port, matrix_Col[4], LOW);
+			HAL_GPIO_WritePin(GPIOA, matrix_Col[4], LOW);
             break;
         case 5:
         	clearLEDMatrix();
         	HAL_GPIO_WritePin(GPIOB, matrix_buffer[5], LOW);
-			HAL_GPIO_WritePin(ENM5_GPIO_Port, matrix_Col[5], LOW);
+			HAL_GPIO_WritePin(GPIOA, matrix_Col[5], LOW);
             break;
         case 6:
         	clearLEDMatrix();
         	HAL_GPIO_WritePin(GPIOB, matrix_buffer[6], LOW);
-			HAL_GPIO_WritePin(ENM6_GPIO_Port, matrix_Col[6], LOW);
+			HAL_GPIO_WritePin(GPIOA, matrix_Col[6], LOW);
             break;
         case 7:
         	clearLEDMatrix();
         	HAL_GPIO_WritePin(GPIOB, matrix_buffer[7], LOW);
-			HAL_GPIO_WritePin(ENM7_GPIO_Port, matrix_Col[7], LOW);
+			HAL_GPIO_WritePin(GPIOA, matrix_Col[7], LOW);
             break;
         default:
             break;
     }
 }
+
 
 void clearLEDMatrix()
 {
