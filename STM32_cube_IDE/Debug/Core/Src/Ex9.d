@@ -1,4 +1,4 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/Ex9.o: ../Core/Src/Ex9.c ../Core/Src/Ex9.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -22,8 +22,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Src/Ex9.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+
+../Core/Src/Ex9.h:
 
 ../Core/Inc/main.h:
 
@@ -74,5 +75,3 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
-
-../Core/Src/Ex9.h:

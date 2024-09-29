@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Ex5.h"
+#include "Ex9.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,14 +87,15 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(& htim2);
-	Ex5_set();
+	Ex9_set();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  Ex5_run();
+	  Ex9_run();
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -192,30 +193,50 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, DOT_Pin|LED_RED_Pin|A_7_SEG_Pin|B_7_SEG_Pin
-                          |C_7_SEG_Pin|D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin
-                          |G_7_SEG_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, ANOT_COMMON_1_Pin|ANOT_COMMON_2_Pin|ANOT_COMMON_3_Pin|ANOT_COMMON_4_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, ENM0_Pin|ENM1_Pin|ENM2_Pin|ENM3_Pin
+                          |ENM4_Pin|ENM5_Pin|ENM6_Pin|ENM7_Pin
+                          |ANOT_COMMON_1_Pin|ANOT_COMMON_2_Pin|ANOT_COMMON_3_Pin|ANOT_COMMON_4_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pins : DOT_Pin LED_RED_Pin A_7_SEG_Pin B_7_SEG_Pin
-                           C_7_SEG_Pin D_7_SEG_Pin E_7_SEG_Pin F_7_SEG_Pin
-                           G_7_SEG_Pin */
-  GPIO_InitStruct.Pin = DOT_Pin|LED_RED_Pin|A_7_SEG_Pin|B_7_SEG_Pin
-                          |C_7_SEG_Pin|D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin
-                          |G_7_SEG_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, ROW0_Pin|ROW1_Pin|ROW2_Pin|C_7_SEG_Pin
+                          |D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin|G_7_SEG_Pin
+                          |DOT_Pin|ROW3_Pin|ROW4_Pin|ROW5_Pin
+                          |ROW6_Pin|ROW7_Pin|A_7_SEG_Pin|B_7_SEG_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin : LED_RED_Pin */
+  GPIO_InitStruct.Pin = LED_RED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_RED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ENM0_Pin ENM1_Pin ENM2_Pin ENM3_Pin
+                           ENM4_Pin ENM5_Pin ENM6_Pin ENM7_Pin
+                           ANOT_COMMON_1_Pin ANOT_COMMON_2_Pin ANOT_COMMON_3_Pin ANOT_COMMON_4_Pin */
+  GPIO_InitStruct.Pin = ENM0_Pin|ENM1_Pin|ENM2_Pin|ENM3_Pin
+                          |ENM4_Pin|ENM5_Pin|ENM6_Pin|ENM7_Pin
+                          |ANOT_COMMON_1_Pin|ANOT_COMMON_2_Pin|ANOT_COMMON_3_Pin|ANOT_COMMON_4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : ANOT_COMMON_1_Pin ANOT_COMMON_2_Pin ANOT_COMMON_3_Pin ANOT_COMMON_4_Pin */
-  GPIO_InitStruct.Pin = ANOT_COMMON_1_Pin|ANOT_COMMON_2_Pin|ANOT_COMMON_3_Pin|ANOT_COMMON_4_Pin;
+  /*Configure GPIO pins : ROW0_Pin ROW1_Pin ROW2_Pin C_7_SEG_Pin
+                           D_7_SEG_Pin E_7_SEG_Pin F_7_SEG_Pin G_7_SEG_Pin
+                           DOT_Pin ROW3_Pin ROW4_Pin ROW5_Pin
+                           ROW6_Pin ROW7_Pin A_7_SEG_Pin B_7_SEG_Pin */
+  GPIO_InitStruct.Pin = ROW0_Pin|ROW1_Pin|ROW2_Pin|C_7_SEG_Pin
+                          |D_7_SEG_Pin|E_7_SEG_Pin|F_7_SEG_Pin|G_7_SEG_Pin
+                          |DOT_Pin|ROW3_Pin|ROW4_Pin|ROW5_Pin
+                          |ROW6_Pin|ROW7_Pin|A_7_SEG_Pin|B_7_SEG_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -226,7 +247,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
-	Ex5_time();
+	Ex9_time();
 }
 
 void set_time(int time)

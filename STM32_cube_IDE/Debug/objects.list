@@ -3,6 +3,7 @@
 "./Core/Src/Ex2.o"
 "./Core/Src/Ex3&4.o"
 "./Core/Src/Ex5.o"
+"./Core/Src/Ex9.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f1xx_hal_msp.o"
 "./Core/Src/stm32f1xx_it.o"
