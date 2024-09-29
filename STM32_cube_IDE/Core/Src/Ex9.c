@@ -1,7 +1,8 @@
 #include "Ex9.h"
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
-uint8_t matrix_buffer[8] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+//uint8_t matrix_buffer[8] = {0x3C, 0x42, 0x42, 0x7E, 0x42, 0x42, 0x42, 0x42};
+uint8_t matrix_buffer[8] = {0x00, 0xFE, 0x09, 0x09, 0x09, 0x09, 0xFE, 0x00};
 uint16_t matrix_Col[8]= {0x0010, 0x0020, 0x0040, 0x0080, 0x0100, 0x0200, 0x0400, 0x0800};
 uint8_t reset_row = 0x00FF;
 uint16_t reset_col = 0x0FF0;
@@ -24,7 +25,6 @@ void Ex9_run()
 //		index_led_matrix = 0;
 //	}
 
-	updateLEDMatrix(index_led_matrix);
 }
 
 void Ex9_time()
@@ -36,6 +36,7 @@ void Ex9_time()
 		index_led_matrix = 0;
 	}
 
+	updateLEDMatrix(index_led_matrix);
 //	if(counter == 50)
 //	{
 //		index_led_matrix++;
