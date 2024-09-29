@@ -17,28 +17,10 @@ uint16_t reset_col = 0x0FF0;
 
 void Ex9_set()
 {
-	set_time(1000);
 }
 
 void Ex9_run()
 {
-//	if(counter <= 0)
-//	{
-//		index_led_matrix++;
-//		set_time(1000);
-//	}
-//
-//	if(index_led_matrix > 7)
-//	{
-//		index_led_matrix = 0;
-//	}
-
-}
-
-void Ex9_time()
-{
-	index_led_matrix++;
-
 	if(index_led_matrix > 7)
 	{
 		index_led_matrix = 0;
@@ -76,20 +58,19 @@ void Ex9_time()
 		char_U[7] = temp[7];
 
 		char_heart[7] = temp [0];
-	}
 
-	updateLEDMatrix(index_led_matrix);
-//	if(counter == 50)
-//	{
-//		index_led_matrix++;
-//	}
-//
-//	if(index_led_matrix > 7)
-//	{
-//		index_led_matrix = 0;
-//	}
-//
-//	counter--;
+		updateLEDMatrix(index_led_matrix);
+	}
+}
+
+void Ex9_time()
+{
+	index_led_matrix++;
+
+	if(index_led_matrix <= 7)
+	{
+		updateLEDMatrix(index_led_matrix);
+	}
 }
 
 void updateLEDMatrix(int index)
