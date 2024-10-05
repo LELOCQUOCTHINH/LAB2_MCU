@@ -14,13 +14,12 @@ void Ex5_set()
 
 void Ex5_run()
 {
-	if(second_flag)
+
+	if(counter < 1)
 	{
 		second ++;
-		index_Led++;
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		set_time(1000);
-		second_flag = 0;
 	}
 
 	if ( second >= 60)
@@ -45,9 +44,9 @@ void Ex5_run()
 void Ex5_time()
 {
 	counter--;
-	if(counter < 1)
+	if(counter % 25 == 0 )
 	{
-		second_flag = 1;
+		index_Led++;
 	}
 }
 

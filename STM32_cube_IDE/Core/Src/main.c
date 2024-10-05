@@ -23,6 +23,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Ex9.h"
+#include "Ex1.h"
+#include "Ex2.h"
+#include "Ex3&4.h"
+#include "Ex5.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,15 +91,22 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(& htim2);
-	Ex9_set();
+//	Ex9_set();
+//	Ex1_set();
+//	Ex2_set();
+//	Ex3_set();
+	Ex5_set();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  Ex9_run();
-
+//	  Ex9_run();
+//	  Ex1_run();
+//	  Ex2_run();
+//	  Ex3_run();
+	  Ex5_run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -247,7 +258,11 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
-	Ex9_time();
+//	Ex9_time();
+//	Ex1_time();
+//	Ex2_time();
+//	Ex3_time();
+	Ex5_time();
 }
 
 void set_time(int time)

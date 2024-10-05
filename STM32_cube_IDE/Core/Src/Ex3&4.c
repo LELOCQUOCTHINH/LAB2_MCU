@@ -16,18 +16,17 @@ void Ex3_run()
 
 void Ex3_time()
 {
-//	if(counter == 50 )
-//	{
-
-//	}
-
-	if(counter < 1)
+	if(counter % 25 == 0 )
 	{
 		update7SEG(index_led++);
 		if(index_led >= MAX_LED)
 		{
 			index_led = 0;
 		}
+	}
+
+	if(counter < 1)
+	{
 		set_time(1000);
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	}

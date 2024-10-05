@@ -1,4 +1,4 @@
 Ex5.c:7:6:Ex5_set	8	static
 Ex5.c:15:6:Ex5_run	8	static
-Ex5.c:45:6:Ex5_time	4	static
-Ex5.c:54:6:updateClockBuffer	8	static
+Ex5.c:44:6:Ex5_time	4	static
+Ex5.c:53:6:updateClockBuffer	8	static
